@@ -3,9 +3,9 @@
 class Titulaire{
     private string $nom;
     private string $prenom;
-    private $dateDeNaissance;
+    private DateTime $dateDeNaissance;
     private string $ville;
-    private $ensembleCompte;
+    private array $ensembleCompte;
 
     public function __construct(string $nom,string $prenom, $dateDeNaissance, string $ville, $ensembleCompte )
     {
@@ -18,7 +18,7 @@ class Titulaire{
     }
 
     public function ajouterCompte($ensembleCompte){
-        $this-> ensembleCompte = $ensembleCompte;
+        $this-> ensembleCompte[]= $ensembleCompte;
     }
 }
 
