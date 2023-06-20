@@ -13,6 +13,8 @@ class CompteBancaire{
         $this-> titulaireCompte = $titulaireCompte;
 
     }
+
+    
     
     
 }
