@@ -49,6 +49,7 @@ class Titulaire{
     public function setVille($ville){
         $this-> ville = $ville;
     }
+
 }
 
 
