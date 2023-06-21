@@ -7,15 +7,15 @@ class Titulaire{
     private string $ville;
     private array $ensembleCompte;
 
-    public function __construct(string $nom,string $prenom, string $dateDeNaissance, string $ville)
+    public function __construct(string $nom, string $prenom, DateTime $dateDeNaissance, string $ville)
     {
         $this->nom = $nom;
-        $this-> prenom = $prenom;
-        $this-> dateDeNaissance = new DateTime($dateDeNaissance);
-        $this-> ville = $ville;
-        //ici comme c'est un ensemble de compte, on créé un tableau
-        $this-> ensembleCompte = [];
+        $this->prenom = $prenom;
+        $this->dateDeNaissance = $dateDeNaissance;
+        $this->ville = $ville;
+        $this->ensembleCompte = [];
     }
+    
 
 // on c réé la function pour calculez age a partir de a date de naissance
     public function calculeAge(){
@@ -31,9 +31,11 @@ class Titulaire{
 
 
 //la function ajouterCompte
-    public function ajouterCompte($ensembleCompte){
-        $this-> ensembleCompte= $ensembleCompte;
+    public function ajouterCompte($compte) {
+        $this->ensembleCompte[] = $compte;
     }
+
+
 // afficher
 
 //getter setter de nom
@@ -54,11 +56,12 @@ class Titulaire{
     public function getDateDeNaissance(){
         return $this -> dateDeNaissance;
     }
-    public function setDateDeNaissance(DateTime $dateDeNaissance){
-        $this-> dateDeNaissance = $dateDeNaissance;
-    }
+    public function setDateDeNaissance(DateTime $dateDeNaissance) {
+        $this->dateDeNaissance = $dateDeNaissance;
+    }    
+    
 //getter et setter de ville
-    public function getVile(){
+    public function getVille(){
         return $this->ville;
     }
     public function setVille(string $ville){

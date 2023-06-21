@@ -11,13 +11,18 @@ spl_autoload_register(function ($class_name){
     require 'classes/'. $class_name . '.php';
 });
 
-$personne1 = new Titulaire("Jean", "Foucaut", "1920-01-01","Paris");
+$personne1 = new Titulaire("Jean", "Foucaut", new DateTime("1920-01-01"), "Paris");
+$personne2 = new Titulaire("arnold", "Swatzeneeger", new DateTime("1956-01-01"), "New-York");
+
 
 echo $personne1;
 
-$compte1 = new CompteBancaire("compte courant",1000, "euro", $titulaireCompte );
+$compte1 = new CompteBancaire("compte courant", 1000, "euro", $personne1);
+$compte2 = new CompteBancaire("livret A", 500000, "dollar", $personne2 );
 
-echo $compte1->afficherInfoxs();
+
+echo $compte1->afficherInfos();
+echo $compte2->afficherInfos();
 
 
 ?>

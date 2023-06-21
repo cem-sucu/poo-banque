@@ -55,17 +55,21 @@ class CompteBancaire{
     }
 
 //méthode effectuer virement d'un compte à l'autre
-    public function virement($compteDestinataire ,$montant){
-      $compteDestinataire-> $montant;
+    public function virement($compteDestinataire, $montant) {
+        $this->debiter($montant);
+        $compteDestinataire->crediter($montant);
     }
 
+
+
 //ici cela permet d'afficher les infos
-    public function afficherInfoxs(){
+    public function afficherInfos() {
         echo "libéllé : $this->libelle <br>";
         echo "solde  : $this->soldeInitiale<br>";
         echo "devise : $this->devideMonetaire<br>";
-        echo "titulaire du compte : $this->titulaireCompte";
+        echo "titulaire du compte : " . $this->titulaireCompte->__toString();
     }
+
 }
 
 
